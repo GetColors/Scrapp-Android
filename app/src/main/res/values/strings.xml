@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Scrapp</string>
+
+
+    <string name="register_tittle_text">Registrate</string>
+    <string name="username_text_field">Nombre de usuario</string>
+    <string name="email_text_field">Correo electrónico</string>
+    <string name="password_text_field">Contraseña</string>
+    <string name="button_text">Registrar</string>
+    <string name="signin_suggestion">¿Ya estás registrado? Ingresa aquí.</string>
+
+
+    <string name="signin_tittle_text">Iniciar sesión</string>
+    <string name="signin_button">Ingresar</string>
+    <string name="register_suggestion">¿No estás registrado? Registrate aquí.</string>
+
+    <string name="trueValue">true</string>
+
+</resources>
