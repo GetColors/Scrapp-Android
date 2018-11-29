@@ -1,4 +1,4 @@
-package cl.getcolors.scrapp
+package cl.getcolors.scrapp.authentication
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.Toast
+import cl.getcolors.scrapp.R
 
 class Signin : AppCompatActivity() {
 
@@ -18,7 +19,8 @@ class Signin : AppCompatActivity() {
 
     fun redirectToRegister(view : View){
 
-        val register = Intent(this, MainActivity::class.java)
+        val register = Intent(this, Signup::class.java)
+        register.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(register)
     }
 
@@ -26,10 +28,11 @@ class Signin : AppCompatActivity() {
         if (doubleBackToExitPressedOnce) {
             finishAffinity()
             return
+
         }
 
         this.doubleBackToExitPressedOnce = true
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Si quieres salir presiona atrás nuevamente.", Toast.LENGTH_SHORT).show()
 
         Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
     }

@@ -2,36 +2,15 @@ package cl.getcolors.scrapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.support.v7.app.AppCompatActivity
-import android.view.View
-import android.widget.Toast
+import cl.getcolors.scrapp.authentication.Signup
 
 class MainActivity : AppCompatActivity() {
 
-    private var doubleBackToExitPressedOnce = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val signup = Intent(this, Signup::class.java)
+        signup.flags = Intent.FLAG_ACTIVITY_NEW_TASK or  Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(signup)
     }
-
-    fun redirectToSignin(view : View){
-
-        val signIn = Intent(this, Signin::class.java)
-        startActivity(signIn)
-    }
-
-    override fun onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            finishAffinity()
-            return
-        }
-
-        this.doubleBackToExitPressedOnce = true
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
-
-        Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
-    }
-
 }
